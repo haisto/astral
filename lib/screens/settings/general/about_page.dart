@@ -97,7 +97,7 @@ class AboutPage extends StatelessWidget {
   }
 
   void _checkForUpdates(BuildContext context) {
-    final updateChecker = UpdateChecker(owner: 'ldoubil', repo: 'astral');
+    final updateChecker = UpdateChecker(owner: 'haisto', repo: 'astral');
     if (context.mounted) {
       updateChecker.checkForUpdates(context);
     }

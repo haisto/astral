@@ -43,7 +43,7 @@ class _MainScreenState extends State<MainScreen>
     // 在初始化时进行更新检查
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (Aps().autoCheckUpdate.value || Aps().beta.value) {
-        final updateChecker = UpdateChecker(owner: 'ldoubil', repo: 'astral');
+        final updateChecker = UpdateChecker(owner: 'haisto', repo: 'astral');
         if (mounted) {
           Future.delayed(const Duration(milliseconds: 1000), () {
             if (mounted) {
