@@ -12,7 +12,7 @@ jobs:
     permissions:
       contents: write  # 确保有写入权限
       packages: write
-    
+
     env:
       FLUTTER_VERSION: main
       FLUTTER_CHANNEL: main
@@ -20,7 +20,7 @@ jobs:
       NDK_VERSION: 28.2.13676358
       JDK_VERSION: 17
       CMAKE_VERSION: 3.18.1
-    
+
     steps:
       - name: 🛠️ 检出代码仓库
         uses: actions/checkout@v4
@@ -30,6 +30,7 @@ jobs:
 
       - name: 🦀 设置 Rust 工具链 1.89.0
         run: |
+          rm -rf /usr/share/dotnet
           chmod +x $GITHUB_WORKSPACE/scripts/install_rust.sh
           $GITHUB_WORKSPACE/scripts/install_rust.sh
 
@@ -61,7 +62,7 @@ jobs:
         with:
           ndk-version: '28.2.13676358'
           cmake-version: '3.18.1'
-          
+
       - name: 🐦 安装 Flutter
         run: |
           chmod +x $GITHUB_WORKSPACE/scripts/install_flutter.sh
